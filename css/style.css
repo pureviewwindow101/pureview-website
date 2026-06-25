@@ -507,6 +507,41 @@ section {
     scroll-margin-top: 220px;
 }
 
+/* IPAD MINI */
+@media (min-width: 700px) and (max-width: 850px) {
+
+    .header {
+        position: sticky;
+        top: 0;
+        flex-direction: column;
+        gap: 8px;
+        padding: 8px 14px;
+    }
+
+    .brand img {
+        width: 58px;
+    }
+
+    .brand h2 {
+        font-size: 24px;
+    }
+
+    .brand p {
+        font-size: 11px;
+    }
+
+    .nav {
+        width: 100%;
+        justify-content: center;
+        gap: 8px 18px;
+        flex-wrap: wrap;
+    }
+
+    .nav a {
+        font-size: 13px;
+        white-space: nowrap;
+    }
+}
 
 /* IPAD / TABLET GRANDE */
 @media (max-width: 1024px) {
