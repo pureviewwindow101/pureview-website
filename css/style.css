@@ -520,6 +520,12 @@ section {
     }
 
     .brand {
+    justify-content: center;
+    text-align: center;
+    gap: 25px;
+}
+
+    .brand {
         justify-content: center;
         text-align: center;
     }
