@@ -870,3 +870,66 @@ section {
     }
 }
 
+/* IPAD MINI VERTICAL */
+@media (min-width: 700px) and (max-width: 850px) and (orientation: portrait) {
+
+    .header {
+        padding: 8px 15px;
+        gap: 6px;
+    }
+
+    .brand img {
+        width: 50px;
+    }
+
+    .brand h2 {
+        font-size: 22px;
+    }
+
+    .brand p {
+        font-size: 10px;
+    }
+
+    .nav {
+        row-gap: 8px;
+        column-gap: 26px;
+    }
+
+    .nav a {
+        font-size: 13px;
+    }
+
+    .hero {
+        padding: 120px 20px 45px;
+    }
+
+    .hero-layout {
+        gap: 14px;
+    }
+
+    .hero-text {
+        padding: 14px 18px;
+        margin-top: 0;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+        line-height: 1.05;
+    }
+
+    .subtitle {
+        font-size: 19px;
+    }
+
+    .hero-video {
+        max-width: 420px;
+    }
+
+    .benefits-row {
+        gap: 12px;
+    }
+
+    .benefits-row p {
+        font-size: 14px;
+    }
+}
