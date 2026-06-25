@@ -544,23 +544,25 @@ section {
     }
 
     .nav {
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px 30px;
-    }
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    justify-content: center;
+    column-gap: 28px;
+    row-gap: 10px;
+}
 
-    .nav a {
-        font-size: 14px;
-        white-space: nowrap;
-    }
+.nav a {
+    font-size: 14px;
+    white-space: nowrap;
+    display: block;
+}
 
-    .hero {
-        min-height: auto;
-        padding: 35px 25px 55px;
-        background-position: center;
-    }
+.hero {
+    min-height: auto;
+    padding: 90px 25px 55px;
+    background-position: center;
+}
 
     .hero-layout {
         display: flex;
@@ -589,7 +591,9 @@ section {
         max-width: 720px;
         margin: 0 auto;
     }
-
+.hero-text {
+    margin-top: 20px;
+}
     .benefits-row {
         grid-template-columns: repeat(2, 1fr);
         gap: 14px;
