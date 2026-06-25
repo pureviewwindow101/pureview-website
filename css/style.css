@@ -946,3 +946,18 @@ section {
         white-space: nowrap;
     }
 }
+
+@media (max-width: 1024px) {
+
+    .nav {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px !important;
+    }
+
+    .nav a {
+        display: inline-block;
+        margin: 0 8px;
+    }
+}
