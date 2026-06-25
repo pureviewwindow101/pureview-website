@@ -507,7 +507,6 @@ section {
     scroll-margin-top: 220px;
 }
 
-
 /* IPAD / TABLET GRANDE */
 @media (max-width: 1024px) {
 
@@ -520,14 +519,9 @@ section {
     }
 
     .brand {
-    justify-content: center;
-    text-align: center;
-    gap: 25px;
-}
-
-    .brand {
         justify-content: center;
         text-align: center;
+        gap: 25px;
     }
 
     .brand img {
@@ -544,25 +538,25 @@ section {
     }
 
     .nav {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(3, max-content);
-    justify-content: center;
-    column-gap: 28px;
-    row-gap: 10px;
-}
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, max-content);
+        justify-content: center;
+        column-gap: 28px;
+        row-gap: 10px;
+    }
 
-.nav a {
-    font-size: 14px;
-    white-space: nowrap;
-    display: block;
-}
+    .nav a {
+        font-size: 14px;
+        white-space: nowrap;
+        display: block;
+    }
 
-.hero {
-    min-height: auto;
-    padding: 90px 25px 55px;
-    background-position: center;
-}
+    .hero {
+        min-height: auto;
+        padding: 90px 25px 55px;
+        background-position: center;
+    }
 
     .hero-layout {
         display: flex;
@@ -574,7 +568,7 @@ section {
         order: 1;
         width: 100%;
         max-width: 720px;
-        margin: 0 auto;
+        margin: 20px auto 0;
         text-align: center;
     }
 
@@ -591,9 +585,7 @@ section {
         max-width: 720px;
         margin: 0 auto;
     }
-.hero-text {
-    margin-top: 20px;
-}
+
     .benefits-row {
         grid-template-columns: repeat(2, 1fr);
         gap: 14px;
@@ -601,30 +593,6 @@ section {
 
     .hero-actions {
         justify-content: center;
-    }
-}
-
-/* TABLET */
-@media (max-width: 768px) {
-
-    .nav {
-        gap: 14px 26px;
-    }
-
-    .nav a {
-        font-size: 14px;
-    }
-}
-
-/* CELULAR */
-@media (max-width: 480px) {
-
-    .nav {
-        gap: 8px 14px;
-    }
-
-    .nav a {
-        font-size: 13px;
     }
 }
 
