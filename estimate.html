@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estimate | Pure View Window Cleaning LLC</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header class="header">
+
+        <div class="brand">
+            <img src="images/logo/pureview-logo.png" alt="Pure View Logo">
+
+            <div>
+                <h2>PURE <span>VIEW</span></h2>
+                <p>WINDOW CLEANING LLC</p>
+            </div>
+        </div>
+
+        <nav class="nav">
+            <a href="index.html">HOME</a>
+            <a href="index.html#services">SERVICES</a>
+            <a href="index.html#info">INFO</a>
+            <a href="gallery.html">GALLERY</a>
+            <a href="estimate.html">ESTIMATE</a>
+            <a href="index.html#contact">CONTACT</a>
+        </nav>
+
+    </header>
+
+    <section class="estimate-section estimate-page">
+
+        <div class="estimate-container">
+
+            <div class="estimate-title">
+                <p>REQUEST A FREE ESTIMATE</p>
+                <h2>Tell Us About Your Project</h2>
+
+                <span class="estimate-intro" id="estimateIntro">
+                    Complete the form below and our team will review your request.
+                    You'll receive a response as soon as possible.
+                    Fields marked with * are required.
+                </span>
+            </div>
+
+            <form class="estimate-form" novalidate>
+
+                <!-- Estimate Type -->
+
+                <div class="form-card estimate-type-card">
+
+                    <h3>What type of property do you need service for? *</h3>
+
+                    <div class="estimate-type-grid">
+
+                        <label>
+                            <input type="radio" name="estimate_type" value="Residential" checked>
+                            Residential Property
+                        </label>
+
+                        <label>
+                            <input type="radio" name="estimate_type" value="Commercial">
+                            Commercial Building
+                        </label>
+
+                    </div>
+
+                </div>
+                <div class="form-summary-error" id="formSummaryError"></div>
+                <!-- Customer Information -->
+
+                <div class="form-card">
+
+                    <h3>Customer Information</h3>
+
+                    <div class="customer-grid">
+
+                        <input class="customer-name" type="text" name="name" placeholder="Full Name *" required>
+
+                        <input type="email" name="email" placeholder="Email Address ">
+
+                        <input type="tel" name="phone" placeholder="Phone Number ">
+
+                    </div>
+
+                </div>
+
+                <!-- Property Address -->
+
+                <div class="form-card">
+
+                    <h3>Property Address *</h3>
+
+                    <p class="form-help">
+                        <strong>Example:</strong> 123 Main St, Seattle, WA 98101
+                    </p>
+
+                    <div class="address-grid">
+
+                        <input class="street-address" type="text" name="street" placeholder="Enter property address"
+                            required>
+
+                    </div>
+
+                    <button type="button" class="location-btn" id="verifyAddressBtn">
+                        📍 Verify Property Address (Optional)
+                    </button>
+
+                    <p class="location-status" id="locationStatus"></p>
+
+                    <input type="hidden" id="mapsLink" name="mapsLink">
+
+
+                </div>
+
+                <!-- Services -->
+
+                <div class="form-card residential-field">
+
+                    <h3><span>1</span> Services Needed *</h3>
+
+                    <div class="service-options">
+                        <label class="service-option">
+                            <input type="checkbox" name="services" value="Window Cleaning">
+                            <strong>🪟 Window Cleaning</strong>
+                            <small>Residential and commercial window cleaning.</small>
+                        </label>
+
+                        <label class="service-option">
+                            <input type="checkbox" name="services" value="Pressure Washing">
+                            <strong>💦 Pressure Washing</strong>
+                            <small>Exterior surfaces, driveways and walls.</small>
+                        </label>
+
+                        <label class="service-option">
+                            <input type="checkbox" name="services" value="Roof Cleaning">
+                            <strong>🏠 Roof Cleaning</strong>
+                            <small>Careful roof cleaning for property protection.</small>
+                        </label>
+
+                        <label class="service-option">
+                            <input type="checkbox" name="services" value="Gutter Cleaning">
+                            <strong>🍃 Gutter Cleaning</strong>
+                            <small>Debris removal for proper water flow.</small>
+                        </label>
+                    </div>
+
+                    <p class="form-error" id="servicesError"></p>
+
+                </div>
+                
+                <!-- Floors -->
+                 
+                <div class="form-card residential-field">
+
+                    <h3>How many floors? *</h3>
+
+                    <div class="checkbox-grid floors-grid">
+
+                        <label>
+                            <input type="radio" name="floors" value="1 Story" required>
+                            1 Story
+                        </label>
+
+                        <label>
+                            <input type="radio" name="floors" value="2 Stories">
+                            2 Stories
+                        </label>
+
+                        <label>
+                            <input type="radio" name="floors" value="3 Stories">
+                            3 Stories
+                        </label>
+
+                        <label>
+                            <input type="radio" name="floors" value="4+ Stories">
+                            4+ Stories
+                        </label>
+
+                    </div>
+
+                </div>
+
+                <!-- Description -->
+
+                <div class="form-card">
+
+                    <h3 id="jobDescriptionTitle">Job Description</h3>
+
+                    <textarea id="jobDescription" name="description" rows="6" maxlength="500"
+                        placeholder="Tell us anything that may help us prepare your estimate. (Optional)"></textarea>
+                </div>
+
+                <button type="submit" class="estimate-btn">
+
+                    REQUEST FREE ESTIMATE
+
+                </button>
+                <div class="form-success-message" id="formSuccessMessage">
+
+                    <div id="successMessageText"></div>
+
+                    <button type="button" class="success-btn" id="successOkBtn">
+                        OK
+                    </button>
+
+                </div>
+
+                <p class="privacy-text">
+
+                    By submitting this form, you agree that Pure View Window Cleaning LLC may contact you regarding your
+                    estimate.
+
+                    <br><br>
+
+                    We respect your privacy. Your information will only be used to prepare your estimate and will never
+                    be shared with third parties.
+
+                </p>
+
+            </form>
+
+        </div>
+
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
