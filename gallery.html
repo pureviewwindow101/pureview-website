@@ -1,55 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery | Pure View Window Cleaning LLC</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/tablet.css">
+    <link rel="stylesheet" href="css/mobile.css">
 </head>
+
 <body>
 
-<header class="header">
-    <div class="brand">
-        <img src="images/logo/pureview-logo.png" alt="Pure View Logo">
-        <div>
-            <h2>PURE <span>VIEW</span></h2>
-            <p>WINDOW CLEANING LLC</p>
+    <header class="header">
+        <div class="brand">
+            <img src="images/logo/pureview-logo.png" alt="Pure View Logo">
+            <div>
+                <h2>PURE <span>VIEW</span></h2>
+                <p>WINDOW CLEANING LLC</p>
+            </div>
         </div>
+
+        <nav class="nav">
+            <a href="index.html#home">HOME</a>
+            <a href="index.html#services">SERVICES</a>
+            <a href="index.html#info">INFO</a>
+            <a href="gallery.html">GALLERY</a>
+            <a href="estimate.html">ESTIMATE</a>
+            <a href="index.html#contact">CONTACT</a>
+        </nav>
+    </header>
+
+    <section class="gallery-page">
+        <div class="section-header">
+            <p>OUR WORK</p>
+            <h2>Gallery</h2>
+        </div>
+
+        <div class="gallery-grid">
+            <img src="images/gallery/gallery01.webp" alt="Pure View window cleaning project" loading="lazy">
+            <img src="images/gallery/gallery02.webp" alt="Professional residential window cleaning" loading="lazy">
+            <img src="images/gallery/gallery03.webp" alt="Roof cleaning service" loading="lazy">
+            <img src="images/gallery/gallery04.webp" alt="Exterior window cleaning service" loading="lazy">
+            <img src="images/gallery/gallery05.webp" alt="Exterior window cleaning service" loading="lazy">
+            <img src="images/gallery/gallery06.webp" alt="Commercial glass window cleaning service" loading="lazy">
+        </div>
+    </section>
+
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close">&times;</button>
+        <button class="lightbox-prev">&#10094;</button>
+        <img src="" alt="Gallery image" id="lightbox-img">
+        <button class="lightbox-next">&#10095;</button>
     </div>
 
-    <nav class="nav">
-        <a href="index.html#home">HOME</a>
-        <a href="index.html#services">SERVICES</a>
-        <a href="index.html#info">INFO</a>
-        <a href="gallery.html">GALLERY</a>
-        <a href="estimate.html">ESTIMATE</a>
-        <a href="index.html#contact">CONTACT</a>
-    </nav>
-</header>
-
-<section class="gallery-page">
-    <div class="section-header">
-        <p>OUR WORK</p>
-        <h2>Gallery</h2>
-    </div>
-
-    <div class="gallery-grid">
-        <img src="images/gallery/gallery01.webp" alt="Pure View window cleaning project" loading="lazy">
-        <img src="images/gallery/gallery02.webp" alt="Professional residential window cleaning" loading="lazy">
-        <img src="images/gallery/gallery03.webp" alt="Roof cleaning service" loading="lazy">
-        <img src="images/gallery/gallery04.webp" alt="Exterior window cleaning service" loading="lazy">
-        <img src="images/gallery/gallery05.webp" alt="Exterior window cleaning service" loading="lazy">
-        <img src="images/gallery/gallery06.webp" alt="Commercial glass window cleaning service" loading="lazy">       
-    </div>
-</section>
-
-<div class="lightbox" id="lightbox">
-    <button class="lightbox-close">&times;</button>
-    <button class="lightbox-prev">&#10094;</button>
-    <img src="" alt="Gallery image" id="lightbox-img">
-    <button class="lightbox-next">&#10095;</button>
-</div>
-
-<script src="js/script.js"></script>
+    <script src="js/script.js"></script>
 </body>
+
 </html>
