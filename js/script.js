@@ -92,6 +92,27 @@ const formSummaryError = document.getElementById("formSummaryError");
 const formSuccessMessage = document.getElementById("formSuccessMessage");
 const successMessageText = document.getElementById("successMessageText");
 const successOkBtn = document.getElementById("successOkBtn");
+const emailInput = document.querySelector('input[name="email"]');
+const phoneInput = document.querySelector('input[name="phone"]');
+
+function isValidEmail(email) {
+    if (!email) return true;
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function formatPhone(value) {
+    const numbers = value.replace(/\D/g, "").slice(0, 10);
+
+    if (numbers.length <= 3) return numbers;
+    if (numbers.length <= 6) return `(${numbers.slice(0, 3)}) ${numbers.slice(3)}`;
+
+    return `(${numbers.slice(0, 3)}) ${numbers.slice(3, 6)}-${numbers.slice(6)}`;
+}
+
+function isValidPhone(phone) {
+    const numbers = phone.replace(/\D/g, "");
+    return numbers.length >= 10 && numbers.length <= 11;
+}
 if (successOkBtn && formSuccessMessage) {
 
     successOkBtn.addEventListener("click", () => {
@@ -107,8 +128,6 @@ if (estimateForm && formSummaryError) {
         const errors = [];
 
         const nameInput = document.querySelector('input[name="name"]');
-        const emailInput = document.querySelector('input[name="email"]');
-        const phoneInput = document.querySelector('input[name="phone"]');
         const addressInput = document.querySelector('input[name="street"]');
         const descriptionInput = document.querySelector('textarea[name="description"]');
 
@@ -116,24 +135,46 @@ if (estimateForm && formSummaryError) {
 
         const requiredFields = [
             { input: nameInput, label: "Full Name" },
+            { input: phoneInput, label: "Phone Number" },
             { input: addressInput, label: "Property Address" }
         ];
         document.querySelectorAll(".input-error").forEach((field) => {
             field.classList.remove("input-error");
         });
 
+        if (emailInput) {
+            emailInput.value = emailInput.value.trim();
+
+            if (emailInput.value && !isValidEmail(emailInput.value)) {
+                errors.push("Please enter a valid email address");
+                emailInput.classList.add("input-error");
+            }
+        }
+
+        if (phoneInput) {
+            phoneInput.value = phoneInput.value.trim();
+
+            if (!isValidPhone(phoneInput.value)) {
+                errors.push("Please enter a valid phone number");
+                phoneInput.classList.add("input-error");
+            }
+        }
+
         requiredFields.forEach((field) => {
             if (field.input && field.input.value.trim() === "") {
                 errors.push(field.label);
                 field.input.classList.add("input-error");
+
             }
+
+
         });
 
         const selectedEstimateType = document.querySelector('input[name="estimate_type"]:checked');
         const isCommercial = selectedEstimateType && selectedEstimateType.value === "Commercial";
 
         const selectedServices = document.querySelectorAll('input[name="services"]:checked');
-        const selectedFloors = document.querySelector('input[name="floors"]:checked');
+        const floorsInput = document.querySelector('select[name="floors"]');
 
         if (!isCommercial) {
 
@@ -141,8 +182,9 @@ if (estimateForm && formSummaryError) {
                 errors.push("Select at least one service");
             }
 
-            if (!selectedFloors) {
+            if (floorsInput && floorsInput.value === "") {
                 errors.push("Number of Floors");
+                floorsInput.classList.add("input-error");
             }
         }
 
@@ -184,6 +226,13 @@ if (estimateForm && formSummaryError) {
         if (successMessageText) {
             successMessageText.innerHTML = "";
         }
+        const confirmSend = confirm(
+            "Please confirm that the information is correct before submitting your estimate request."
+        );
+
+        if (!confirmSend) {
+            return;
+        }
 
         const submitBtn = estimateForm.querySelector(".estimate-btn");
 
@@ -207,8 +256,8 @@ if (estimateForm && formSummaryError) {
                     .join(", "),
             floors: isCommercial
                 ? "Not applicable"
-                : selectedFloors
-                    ? selectedFloors.value
+                : floorsInput
+                    ? floorsInput.value
                     : "",
             maps_link: mapsLinkInput.value ||
                 `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(addressInput.value.trim())}`,
@@ -270,7 +319,33 @@ document.querySelectorAll(
 
     input.addEventListener("input", () => {
 
-        if (input.value.trim() !== "") {
+        if (input.type === "tel") {
+            input.value = formatPhone(input.value);
+        } else {
+            input.value = input.value.trimStart();
+        }
+
+        if (input.name === "email") {
+            if (input.value && !isValidEmail(input.value)) {
+                input.classList.add("input-error");
+            } else {
+                input.classList.remove("input-error");
+            }
+        }
+
+        if (input.name === "phone") {
+            if (!isValidPhone(input.value)) {
+                input.classList.add("input-error");
+            } else {
+                input.classList.remove("input-error");
+            }
+        }
+
+        if (
+            input.name !== "email" &&
+            input.name !== "phone" &&
+            input.value.trim() !== ""
+        ) {
             input.classList.remove("input-error");
         }
 
@@ -298,19 +373,17 @@ document.querySelectorAll('input[name="services"]').forEach((checkbox) => {
 
 });
 
-document.querySelectorAll('input[name="floors"]').forEach((radio) => {
+const floorsSelect = document.querySelector('select[name="floors"]');
 
-    radio.addEventListener("change", () => {
+if (floorsSelect) {
+    floorsSelect.addEventListener("change", () => {
+        floorsSelect.classList.remove("input-error");
 
         if (formSummaryError) {
-
             formSummaryError.classList.remove("active");
-
         }
-
     });
-
-});
+}
 
 /* ESTIMATE TYPE */
 

@@ -670,7 +670,7 @@ body {
 .form-card h3 {
     color: #08292c;
     font-size: 22px;
-    margin-bottom: 18px;
+    margin-bottom: 22px;
 }
 
 .form-help {
@@ -1356,4 +1356,25 @@ section {
 .hero-actions .call-btn:focus {
     color: #ffffff !important;
     text-decoration: none;
+}
+
+/* FLOORS SELECT */
+
+.floors-select {
+    width: 10%;
+    height: 64px;
+    padding: 0 22px;
+    border: 1px solid #b8eee6;
+    border-radius: 14px;
+    background: #f4fffd;
+    color: #0b2b2f;
+    font-size: 18px;
+    font-weight: 10;
+    outline: none;
+    cursor: pointer;
+}
+
+.floors-select:focus {
+    border-color: #16c6a5;
+    box-shadow: 0 0 0 4px rgba(22, 198, 165, 0.15);
 }
