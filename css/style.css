@@ -1378,3 +1378,51 @@ section {
     border-color: #16c6a5;
     box-shadow: 0 0 0 4px rgba(22, 198, 165, 0.15);
 }
+
+/* DESKTOP HEADER FIX */
+
+@media (min-width: 1025px) {
+
+    .header {
+        padding: 18px 60px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .brand {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        text-align: left;
+    }
+
+    .brand img {
+        width: 80px;
+        height: auto;
+    }
+
+    .brand h2 {
+        font-size: 30px;
+        line-height: 1;
+    }
+
+    .brand p {
+        font-size: 11px;
+        letter-spacing: 1px;
+    }
+
+    .nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 28px;
+    }
+
+    .nav a {
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: .5px;
+    }
+}
