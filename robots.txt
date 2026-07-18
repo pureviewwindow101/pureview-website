@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pureviewcleaningllc.pages.dev/sitemap.xml
